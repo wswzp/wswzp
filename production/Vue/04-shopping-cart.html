@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+    <style>
+        .container {
+            width: 940px;
+        }
+        .product-list span {
+        display: block;
+        }
+        .product-list span::before {
+        content: "￥";
+        }
+        #myModal table tr td {
+        line-height: 50px;
+        }
+        #myModal table tr td img {
+        width: 50px;
+        float: left;
+        }
+        #myModal table tr td h5 {
+        float: left;
+        margin: 0;
+        line-height: 50px;
+        }
+        #myModal table tr td .quantity {
+        margin: 0 5px;
+        }
+        
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="container-fluid" id="myModal">
+        <div class="modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">购物车</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <tr>
+                            <th>选中</th>
+                            <th>商品信息</th>
+                            <th>单价</th>
+                            <th>数量</th>
+                            <th>小计</th>
+                            <th>操作</th>
+                        </tr>
+                        <tr v-for="item in products" :key="item.id">
+                            <td><input type="checkbox" name="" id="" v-model="item.checked"></td>
+                            <td>
+                                <img :src="item.thumb" class="img-responsive" alt="Image">
+                                <h5>{{item.title}}</h5>
+                            </td>
+                            <td><span class="price">{{item.price.toFixed(2)}}</span></td>
+                            <td>
+                                <span class="quantity-minus" @click="quantityMinus(item)">-</span>
+                                <span class="quantity">{{item.quantity}}</span>
+                                <span class="quantity-plus" @click="item.quantity++">+</span>
+                            </td>
+                            <td><span class="subtotal">{{item.price * item.quantity}}</span></td>
+                            <td><button type="button" class="btn btn-info" @click="removeItem(item)">删除</button></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary pull-left del-all" @click="removeMany">删除</button>
+                    <button type="button" class="btn btn-primary total">共计{{total}}元</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script>
+        var app = new Vue({
+            el: '.container-fluid',
+            data: {
+                products: []
+            },
+            computed: {
+                total: function () {
+                    var totle = 0;
+                    this.products.forEach(element => {
+                        totle += element.price * element.quantity
+                    });
+                    return totle
+                },
+                markedItem: function () {
+                    return this.products.filter(function (item) {
+                        return item.checked
+                    })
+                }
+            },
+            methods: {
+                quantityMinus: function (item) {
+                    if (item.quantity > 1) {
+                        item.quantity--
+                    }
+                },
+                removeItem: function (item) {
+                    // console.log('item', item)
+                    this.products.splice(this.products.indexOf(item), 1)
+                    
+                },
+                // removeMany: function () {
+                //     var arr = []
+                //     this.products.forEach(element => {
+                //         if (element.checked) {
+                //             // console.log('element', element)
+                //             // this.removeItem(element)
+                //             arr.push(element)
+                //         }
+                //     });
+                //     // console.log('arr', arr)
+                //     arr.forEach(element => {
+                //         this.removeItem(element)
+                //     });
+                // }
+                removeMany: function () {
+                    this.markedItem.forEach(element => {
+                        this.removeItem(element)
+                    });
+                }
+
+            },
+            //axios get 请求json文件数据
+            created: function () {
+                axios.get('/production/Vue/04-shopping-cart.json')
+                    .then((response) => {
+                        // console.log(response.data.products);
+                        this.products = response.data.products
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+.button {
+  position: relative;
+  left: 29%;
+  top: 170px;
+  width: 200px;
+  height: 60px;
+  background: yellow;
+  overflow: hidden;
+  border-radius: 10px;
+  display: inline-block;
+  z-index: 1;
+}
+.button span {
+  display: block;
+  text-align: center;
+  line-height: 60px;
+  color: black;
+}
+.button span + i {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  background: greenyellow;
+  top: 0;
+  left: 0;
+  transform: scale(0);
+  transition: transform 0.5s;
+  z-index: -1;
+}
+.button span.active + i {
+  transform: scale(4);
+}

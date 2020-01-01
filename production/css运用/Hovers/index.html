@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="production/css运用/Hovers/css/style.css"/>
+		<script src="production/css运用/Hovers/js/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="production/css运用/Hovers/css/动画按钮.css"/>
+
+	</head>
+	<body>
+		<div class="row r1">  				            
+			<a href="#">
+				<div class="spinner"></div>
+				<div class="img">
+					<img src="production/css运用/Hovers/img/2.jpg" alt="img">
+				</div>
+				<div class="info i1">				
+					<h3>Heading here</h3>
+					<p>Description goes here</p>					
+				</div>
+			</a>			                                   
+        </div>
+		
+		<div class="row r2">  				            
+			<a href="#">
+				<div class="img">
+					<img src="production/css运用/Hovers/img/2.jpg" alt="img">
+				</div>
+				<div class="info i2">				
+					<h3>Heading here</h3>
+					<p>Description goes here</p>					
+				</div>
+			</a>	                                   
+		</div>
+		
+		<div class="row r3">  				            
+			<a href="#">
+				<div class="img">
+					<img src="production/css运用/Hovers/img/1.jpg" alt="img">
+				</div>
+				<div class="info i2">				
+					<h3>Heading here</h3>
+					<p>Description goes here</p>					
+				</div>
+			</a>	                                   
+		</div>
+		
+		<div class="row r4">  				            
+			<a href="#">
+				<div class="img">
+					<img src="production/css运用/Hovers/img/8.jpg" alt="img">
+				</div>
+				<div class="info i4">				
+					<h3>Heading here</h3>
+					<p>Description goes here</p>					
+				</div>
+			</a>	                                   
+		</div>
+		
+		<a href="#" class="hvr-buzz">Buzz</a>
+		
+		<a href="#" class="hvr-radial-out">Radial Out</a>
+		
+		<a href="#" class="hvr-bubble-float-left">Bubble Float Left</a>
+		
+		<div class="button">
+			<span>
+				Simple button
+			</span>
+			<i></i>
+		</div>
+		
+		<script>
+			$('.button span').hover(function(ev) {
+				$('.button span + i').css({
+					//clientY 事件属性返回当事件被触发时鼠标指针向对于浏览器页面（客户区）的垂直坐标。 客户区指的是当前窗口。
+					top: (ev.clientY - $('.button span').offset().top - 50),
+					left: (ev.clientX - $('.button span').offset().left - 50)
+
+				})
+				
+				$('.button span') .addClass('active');
+				console.log(ev.clientX - $('.button span').offset().left)
+				
+			},function() {
+				$('.button span').removeClass('active');
+			})
+		</script>
+	</body>  
+</html>

@@ -1,0 +1,26 @@
+.row {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    top: 30px;
+    .img {
+        //transform-Origin属性允许您更改转换元素的位置。
+        transform-origin: 95% 40%;
+        //所有属性都将获得过渡效果  时间  以慢速开始和结束的过渡效果 
+        transition: all .35s ease-in-out;
+        position: relative;
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        &:before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            box-shadow: inset;
+            position: absolute;
+            display: block;
+        }
+    }
+}

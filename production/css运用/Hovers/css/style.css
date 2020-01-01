@@ -1,0 +1,438 @@
+body {
+	
+	
+}
+.r1 {
+  
+}
+.r3 {
+  
+}
+.r4 {
+  
+}
+.row {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+	  float: left;
+    margin: 20px 40px 10px 40px;
+    left: 100px;
+}
+.row .spinner {
+    width: 210px;
+    height: 210px;
+    border: 10px solid #ecab18;
+    border-right-color: #1ad280;
+    border-bottom-color: #1ad280;
+    border-radius: 50%;
+    -webkit-transition: all 0.8s ease-in-out;
+    -moz-transition: all 0.8s ease-in-out;
+    transition: all 0.8s ease-in-out;
+}
+.row a .img {
+    position: absolute;
+    top: 10px;
+    bottom: 0;
+    left: 10px;
+    right: 0;
+    width: auto;
+    height: auto;
+}
+.row .img {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    
+}
+.row .img img {
+    border-radius: 50%;
+	width: 100%;
+	height: 100%;
+}
+
+.row a .info.i1 {
+    top: 10px;
+    bottom: 0;
+    left: 10px;
+    right: 0;
+    background: #333333;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    -webkit-transition: all 0.8s ease-in-out;
+    -moz-transition: all 0.8s ease-in-out;
+    transition: all 0.8s ease-in-out;
+}
+.row .info {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    border-radius: 50%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.row .info h3 {
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+    letter-spacing: 2px;
+    font-size: 22px;
+    margin: 0 30px;
+    padding: 55px 0 0 0;
+    height: 65px; 
+}
+.row .info p {
+    color: #bbb;
+    padding: 10px 5px;
+	 /*--字体倾斜----- */
+    font-style: italic;   
+    margin: 0 30px;
+    font-size: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+.row a:hover .info {
+	opacity: 1;
+}
+.row a:hover .spinner {
+	transform: rotate(180deg);
+}
+
+
+ /*----------------------------------------------------- */
+
+ .row.r3 a .img:before,
+ .row.r4 a .img:before,
+ .row.r2 a .img:before {
+ 	position: absolute;
+     display: block;
+     content: '';
+     width: 100%;
+     height: 100%;
+     border-radius: 50%;
+     box-shadow: inset 0 0 0 16px rgba(255, 255, 255, 0.6), 0 1px 2px rgba(0, 0, 0, 0.3);
+     -webkit-transition: all 0.35s ease-in-out;
+     -moz-transition: all 0.35s ease-in-out;
+     transition: all 0.35s ease-in-out;
+  }
+  .row.r2 a .img {
+ 	 -webkit-transform-origin: 95% 40%;
+ 	 transform-origin: 95% 40%;
+ 	 z-index: 11;
+ 	 transition: all .35s ease-in-out;
+ 	 position: relative;
+ 	 width: 220px;
+ 	 height: 220px;
+ 	 border-radius: 50%;
+	 top: 0;
+	 left: 0;
+  }
+  
+  .row.r2 a .img:after {
+ 	 content: '';
+ 	 width: 8px;
+ 	 height: 8px;
+ 	 position: absolute;
+ 	 border-radius: 50%;
+ 	 top: 40%;
+ 	 left: 95%;
+ 	 margin: -4px 0 0 -4px;
+ 	 background: rgba(0, 0, 0, 0.8);
+     
+  }
+  .row.r2 a:hover .img {
+ 	 webkit-transform: rotate(-120deg);
+     -moz-transform: rotate(-120deg);
+     -ms-transform: rotate(-120deg);
+     -o-transform: rotate(-120deg);
+     transform: rotate(-120deg);
+  }
+  .row.r2 .info.i2 {
+	  background: #1a4a72;
+  } 
+  
+  
+  /* ----------------------------------------------*/
+ .row.r3 .img {
+	 left: 0;
+	 top: 0;
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: scale(1) rotate(0);
+    -moz-transform: scale(1) rotate(0);
+    -ms-transform: scale(1) rotate(0);
+    -o-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+    -webkit-transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+}
+
+ .row.r3 a:hover .img {
+	 
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: scale(0.5) rotate(720deg);
+    -moz-transform: scale(0.5) rotate(720deg);
+    -ms-transform: scale(0.5) rotate(720deg);
+    -o-transform: scale(0.5) rotate(720deg);
+    transform: scale(0.5) rotate(720deg);
+}
+.row.r3 .info {
+    background: #333333;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: scale(0.5) rotate(-720deg);
+    -moz-transform: scale(0.5) rotate(-720deg);
+    -ms-transform: scale(0.5) rotate(-720deg);
+    -o-transform: scale(0.5) rotate(-720deg);
+    transform: scale(0.5) rotate(-720deg);
+    -webkit-transition: all 0.35s ease-in-out 0.3s;
+    -moz-transition: all 0.35s ease-in-out 0.3s;
+    transition: all 0.35s ease-in-out 0.3s;
+}
+.row.r3 a:hover .info {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: scale(1) rotate(0);
+    -moz-transform: scale(1) rotate(0);
+    -ms-transform: scale(1) rotate(0);
+    -o-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+}
+
+ /*--------------------------------------- */
+.row.r4 a:hover .img {
+    -webkit-transform: rotate3d(0, 1, 0, -180deg);
+    -moz-transform: rotate3d(0, 1, 0, -180deg);
+    -ms-transform: rotate3d(0, 1, 0, -180deg);
+    -o-transform: rotate3d(0, 1, 0, -180deg);
+    transform: rotate3d(0, 1, 0, -180deg);
+}
+.row.r4 .img {
+	left: 0;
+	top: 0;
+    -webkit-transform-origin: 0% 50%;
+    -moz-transform-origin: 0% 50%;
+    -ms-transform-origin: 0% 50%;
+    -o-transform-origin: 0% 50%;
+    transform-origin: 0% 50%;
+}
+.row.r4 .img {
+    z-index: 11;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.row.r4 .info {
+	background-color: #1A4A72;
+}
+
+  /*--------------------------------------------------------------- */
+  
+
+  @-webkit-keyframes hvr-buzz {
+  50% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+  100% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+}
+@keyframes hvr-buzz {
+  50% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+  100% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+}
+.hvr-buzz {
+  display: inline-block;
+  background-color: #ECAB18;
+  padding: 20px;
+  position: absolute;
+  left: 400px;
+  top: 300px;
+}
+.hvr-buzz:hover, .hvr-buzz:focus, .hvr-buzz:active {
+  -webkit-animation-name: hvr-buzz;
+  animation-name: hvr-buzz;
+
+  -webkit-animation-duration: 0.15s;
+  animation-duration: 0.15s;
+
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+  
+  /* --------------------------------------------------------------*/
+  
+  .hvr-radial-out {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+  background: orangered;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  text-decoration: none;
+  padding: 20px;
+  top: 300px;
+  right: 300px;
+}
+.hvr-radial-out:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: greenyellow;
+  border-radius: 100%;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-radial-out:hover, .hvr-radial-out:focus, .hvr-radial-out:active {
+  color: white;
+}
+.hvr-radial-out:hover:before, .hvr-radial-out:focus:before, .hvr-radial-out:active:before {
+  -webkit-transform: scale(2);
+  transform: scale(2);
+}
+
+ /*--------------------------------------------------------------------- */
+ 
+ .hvr-bubble-float-left {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+	background-color: #1AD280;
+	padding: 20px;
+	text-decoration: none;
+	width: 160px;
+  text-align: center;
+  left: 600px;
+  top: 20px;
+}
+.hvr-bubble-float-left:before {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  top: calc(50% - 10px);
+  left: 0;
+  border-style: solid;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent #1AD280 transparent transparent;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+	opacity: 0;
+	transition: all .3s; 
+}
+.hvr-bubble-float-left:hover, .hvr-bubble-float-left:focus, .hvr-bubble-float-left:active {
+  -webkit-transform: translateX(10px);
+  transform: translateX(10px);
+	
+}
+.hvr-bubble-float-left:hover:before, .hvr-bubble-float-left:focus:before, .hvr-bubble-float-left:active:before {
+  -webkit-transform: translateX(-10px);
+  transform: translateX(-10px);
+	opacity: 1;
+}
+ 
+  
+ /*----------------------------------------------------------------- */
+ figure {
+	 position: relative;
+	 z-index: 1;
+	 display: inline-block;
+	 overflow: hidden;
+	 width: 436px;
+	 height: 400px;
+	 background: #3085a3;
+	 text-align: center;
+	 cursor: pointer;
+ }
+ figure.effect-romeo img {
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(0,0,300px);
+    transform: translate3d(0,0,300px);
+}
+ figure img {
+    position: relative;
+    display: block;
+    min-height: 100%;
+    opacity: 0.8;
+}
+figure figcaption, figure a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+figure figcaption {
+    padding: 2em;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.25em;
+    /* -webkit-backface-visibility: hidden; */
+    /* backface-visibility: hidden; */
+}
+figure.effect-romeo figcaption::before,
+figure.effect-romeo figcaption:after {
+	position: absolute;
+	top: 50%;
+	left: 42%;
+	content: '';
+	width: 70%;
+	height: 1px;
+	background: black;
+	transform: translate3d(-50%,-50%,0);
+	transition: opacity 0.35s, transform 0.35s;
+}
+figure.effect-romeo h2 {
+	position: absolute;
+	left: 25%;
+	top: 25%;
+}
+figure.effect-romeo p {
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    width: 100%;
+    -webkit-transition: -webkit-transform 0.35s;
+    transition: transform 0.35s;
+}

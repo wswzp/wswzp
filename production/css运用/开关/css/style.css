@@ -1,0 +1,106 @@
+.g {
+  text-align: center;
+  background: bisque;
+  padding: 5px 0 5px 0;
+  width: 450px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+.g1 {
+  text-align: center;
+  background: bisque;
+  padding: 5px 0 5px 0;
+  width: 450px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+.g1 .ged {
+  width: 100px;
+  height: 50px;
+  position: relative;
+  display: inline-block;
+  margin: 0 15px 5px 15px;
+}
+.g1 .ged input {
+  display: none;
+}
+.g1 .ged input:checked + .slider {
+  background-color: #2196F3;
+}
+.g1 .ged input:checked + .slider::before {
+  -webkit-transform: translateX(40px);
+  -ms-transform: translateX(40px);
+  transform: translateX(40px);
+}
+.g1 .ged .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: black;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+}
+.g1 .ged .slider:before {
+  position: absolute;
+  content: "";
+  height: 40px;
+  width: 40px;
+  left: 10px;
+  bottom: 5px;
+  background-color: white;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+}
+.g1 .ged .r {
+  border-radius: 30px;
+}
+.g1 .ged .r::before {
+  border-radius: 50%;
+}
+.g1 .ged .t {
+  border-radius: 20px;
+}
+.g1 .ged .t::before {
+  border-radius: 23%;
+}
+.g2 {
+  text-align: center;
+  background: bisque;
+  padding: 5px 0 5px 0;
+  width: 450px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+.g2 .switch {
+  display: inline-block;
+  margin: 2px 2px 3px 2px;
+}
+.g2 .switch input {
+  display: none;
+}
+.g2 .switch input:checked + .slider {
+  background: lightblue;
+}
+.g2 .switch input:checked + .slider::before {
+  background: url(../img/input-checked.png);
+}
+.g2 .switch .slider {
+  background: greenyellow;
+  line-height: 40px;
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 0 20px 0 10px;
+}
+.g2 .switch .slider::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  background: url(../img/input-unchecked.png);
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+  margin-top: -2px;
+}

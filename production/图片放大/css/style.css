@@ -1,0 +1,65 @@
+body {
+  background: lavender;
+}
+.bigbox {
+  width: 840px;
+  background: #ffffff;
+  border: 1px solid #EDEDED;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 10px;
+}
+.bigbox .imgbox {
+  width: 400px;
+  cursor: zoom-in;
+  float: left;
+  border-radius: 10px;
+  margin: 10px;
+  overflow: hidden;
+}
+.bigbox .imgbox img {
+  width: 100%;
+}
+.layout {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: none;
+  margin: auto;
+}
+.bigimg {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: none;
+  margin: auto;
+  width: 600px;
+  border: 10px solid #FFFFFF;
+  z-index: 999;
+}
+.mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: none;
+  margin: auto;
+  background-color: #000000;
+  opacity: 0.5;
+  z-index: 9;
+  transition: all 1s;
+  cursor: zoom-out;
+}
+.mask img {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  width: 60px;
+  cursor: pointer;
+}

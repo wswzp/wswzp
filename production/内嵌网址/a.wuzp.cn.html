@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 0 auto;
+    }
+    #iframeId {
+        width: 100%;
+    }
+</style>
+
+<body>
+    <iframe src="http://a.wuzp.cn:8082/posts" id="iframeId" frameborder="0" scrolling="yes" marginheight="0"
+        marginwidth="0"></iframe>
+    <!-- <iframe id="iframe" name="content"  scrolling="no" src="http://a.wuzp.cn:8082/posts"></iframe> -->
+    <script>
+        // document.addEventListener("DOMContentLoaded", function () {
+        //     document.getElementById('iframeId').style.height = window.innerHeight - 4 + 'px';
+
+        // });
+
+        // window.onload = function modify() {
+        //         var s = window.innerHeight;
+        //         document.getElementById("iframeId").style.height = s - 4 + 'px';
+        // }  
+        var s = window.innerHeight;
+        document.getElementById("iframeId").style.height = s - 5 + 'px';
+    </script>
+</body>
+
+</html>

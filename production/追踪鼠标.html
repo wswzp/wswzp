@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" cont="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" cont="ie=edge">
+    <title>Document</title>
+
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+    <script>
+        var div = document.querySelector('div');
+        document.documentElement.onclick = function (event) {
+            var h = event.pageY - (div.offsetHeight / 2);
+            var w = event.pageX - (div.offsetWidth / 2);
+            run(div, {
+                top: h,
+                left: w
+            })
+        }
+
+        function run(params, obj) {
+            clearInterval(params.time);
+            params.time = setInterval(() => {
+                for (var i in obj) {
+                    var star = parseInt(getComputedStyle(params, null)[i]);
+                    var cont = (obj[i] - star) / 10;
+                    cont = cont > 0 ? Math.ceil(cont) : Math.floor(cont);
+
+                    if (obj[i] <= cont) {
+                        clearInterval(params.time);
+                        return;
+                    }
+                    params.style[i] = star + cont + 'px';
+                }
+            }, 20);
+        }
+
+        
+       // distinct.js
+
+let arr1 = Array.from(new Array(100000), (x, index)=>{
+    return index
+})
+
+let arr2 = Array.from(new Array(50000), (x, index)=>{
+    return index+index
+})
+
+let start = new Date().getTime()
+console.log('开始数组去重')
+
+var a = [1,1,12,2,2,]
+function distinct(arr) {
+    var arr = a;
+    let result = []
+    let obj = {}
+ 
+    for (let i of arr) {
+        if (!obj[i]) {
+            result.push(i)
+            obj[i] = 1
+        }
+    }
+ 
+    return result
+}
+
+
+console.log('去重后的长度', distinct(arr1, arr2).length)
+
+let end = new Date().getTime()
+console.log('耗时', end - start)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+ 
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="renderer" content="webkit">
+		<meta name="referrer" content="always">
+		<title>漂亮的复选框</title>
+		<style>
+			.user-select-none {
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+			}
+			
+			.Dswitch {
+				opacity: 0;
+				width: 0;
+				height: 0;
+				display: none;
+			}
+			
+			.Dswitch+label {
+				position: relative;
+				display: inline-block;
+				top: 0px;
+				vertical-align: middle;
+			}
+			
+			.Dswitch+label:after {
+				content: '';
+				outline: none;
+				width: 52px;
+				height: 31px;
+				position: relative;
+				border: 1px solid #dfdfdf;
+				background-color: #fdfdfd;
+				box-shadow: #dfdfdf 0 0 0 0 inset;
+				border-radius: 20px;
+				-moz-border-radius: 20px;
+				border-top-left-radius: 20px;
+				border-top-right-radius: 20px;
+				border-bottom-left-radius: 20px;
+				border-bottom-right-radius: 20px;
+				background-clip: content-box;
+				display: inline-block;
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+				user-select: none;
+				outline: none;
+				z-index: 1;
+			}
+			
+			.Dswitch+label:before {
+				content: '';
+				width: 29px;
+				height: 29px;
+				position: absolute;
+				top: 2px;
+				left: 2px;
+				border-radius: 20px;
+				border-top-left-radius: 20px;
+				border-top-right-radius: 20px;
+				border-bottom-left-radius: 20px;
+				border-bottom-right-radius: 20px;
+				background-color: #fff;
+				box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+				z-index: 10;
+			}
+			
+			.Dswitch:checked+label:after {
+				border-color: #64bd63;
+				box-shadow: #64bd63 0 0 0 16px inset;
+				background-color: #64bd63;
+			}
+			
+			.Dswitch:checked+label:before {
+				left: 23px;
+			}
+			
+			.Dswitch-animbg+label:after {
+				transition: background-color ease 0.4s;
+			}
+			
+			.Dswitch-animbg+label:before {
+				transition: left 0.3s;
+			}
+			
+			.Dswitch-animbg:checked+label:after {
+				box-shadow: #dfdfdf 0 0 0 0 inset;
+				background-color: #64bd63;
+				transition: border-color 0.4s, background-color ease 0.4s;
+			}
+			
+			.Dswitch-animbg:checked+label:before {
+				transition: left 0.3s;
+			}
+		</style>
+	</head>
+ 
+	<body>
+ 
+		<label class="user-select-none">
+			<span style="font-size: 16px;vertical-align: sub;">是否启用</span>
+			<input id="switchAnimbg" class="Dswitch Dswitch-animbg" type="checkbox" />
+			<label for="switchAnimbg"></label>
+			<span style="font-size: 16px;vertical-align: sub;">动画版</span>
+		</label>
+		<br />
+		<label class="user-select-none">
+			<span style="font-size: 16px;vertical-align: sub;">是否启用</span>
+			<input id="switch" class="Dswitch" type="checkbox" />
+			<label for="switch"></label>
+			<span style="font-size: 16px;vertical-align: sub;">非动画版</span>
+		</label>
+ 
+	</body>
+ 
+</html>

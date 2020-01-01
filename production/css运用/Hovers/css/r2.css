@@ -1,0 +1,89 @@
+.row {
+	position: relative;
+	width: 220px;
+	height: 220px;
+	border-radius: 50%;
+	top: 30px;
+}
+.row.r2 a .img {
+    -webkit-transform-origin: 95% 40%;
+    transform-origin: 95% 40%;
+    z-index: 11;
+    transition: all .35s ease-in-out;
+    position: relative;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+}
+ .row.r2 a .img:before {
+	position: absolute;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 16px rgba(255, 255, 255, 0.6), 0 1px 2px rgba(0, 0, 0, 0.3);
+    -webkit-transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+ }
+ .row.r2 a .img:after {
+	 content: '';
+	 width: 8px;
+	 height: 8px;
+	 position: absolute;
+	 border-radius: 50%;
+	 top: 40%;
+	 left: 95%;
+	 margin: -4px 0 0 -4px;
+	 background: rgba(0, 0, 0, 0.8);
+    
+ }
+ .row.r2 a:hover .img {
+	 webkit-transform: rotate(-120deg);
+    -moz-transform: rotate(-120deg);
+    -ms-transform: rotate(-120deg);
+    -o-transform: rotate(-120deg);
+    transform: rotate(-120deg);
+ }
+ .img img {
+	 border-radius: 50%;
+	 width: 100%;
+	 height: 100%;
+ }
+ 
+ .row.r2 .info {
+	position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    border-radius: 50%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+	background: #1a4a72;
+ }
+
+h3 {
+	color: #fff;
+    text-transform: uppercase;
+    position: relative;
+    letter-spacing: 2px;
+    font-size: 22px;
+    margin: 0 30px;
+    padding: 55px 0 0 0;
+    height: 70px;
+    text-shadow: 0 0 1px white, 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+p {
+	color: #bbb;
+    padding: 10px 5px;
+    font-style: italic;
+    margin: 0 30px;
+    font-size: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    -webkit-transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+}

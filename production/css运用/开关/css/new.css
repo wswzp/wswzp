@@ -1,0 +1,28 @@
+.switch {
+	display: inline-block;
+}
+.switch input {
+	display: none;
+}
+.switch .slider {
+	background: greenyellow;
+	line-height: 40px;
+	border-radius: 10px;
+	font-size: 16px;
+	padding: 0 20px 0 10px;
+}
+.switch .slider:before {
+	content: '';
+	width: 16px;
+	height: 16px;
+	background: url(../img/input-unchecked.png);
+	display: inline-block;
+	vertical-align: middle;margin-right: 5px;
+	margin-top: -2px;
+}
+.switch input:checked + .slider {
+	background: lightblue;
+}
+.switch input:checked + .slider:before {
+	background: url(../img/input-checked.png);
+}
