@@ -1,0 +1,32 @@
+body {
+  background: antiquewhite;
+}
+li {
+  list-style: none;
+}
+.box {
+  width: 400px;
+  margin: 0 auto;
+  color: white;
+}
+.box .box-controls li {
+  width: 25%;
+  float: left;
+  line-height: 50px;
+  text-align: center;
+  background: yellow;
+}
+.box .box-controls li.active {
+  background: lawngreen;
+}
+.box .box-items li {
+  display: none;
+}
+.box .box-items li img {
+  position: relative;
+  width: 400px;
+  border-radius: 10px;
+}
+.box .box-items li.active {
+  display: block;
+}

@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+body{
+    padding:0;
+    margin:0;
+    overflow: hidden;
+    background: url(./images/lingyan8.webp) no-repeat;
+    background-size: cover;
+    height: 100px;
+}
+canvas{
+    padding: 0;
+    margin: 0;
+    opacity: 0.75;
+}
+div.btnbg{
+    position: fixed;
+    left: 0;
+    top: 0;
+}
